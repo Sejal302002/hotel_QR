@@ -1,24 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Menu - Monkey Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Élysée Bistro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('/images/background.jpg'); /* Add your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Ensures the background stays fixed while scrolling */
+            color: #4a4a4a;
+        }
+        .header-text {
+            font-family: 'Great Vibes', cursive;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Elegant shadow for depth */
+            padding: 2rem;
+        }
+        .image-fit {
+            height: 180px; 
+            object-fit: cover; 
+            object-position: center;
+        }
+    </style>
 </head>
-<body class="bg-white text-black p-8">
-    <h1 class="text-4xl font-bold text-center text-red-700">Monkey Restaurant Menu</h1>
-    <div class="menu-container mt-8">
-        <div class="menu-item">
-            <h2 class="text-2xl font-semibold">🍕 Pizza</h2>
-            <p>Cheese Burst, Margherita, BBQ Chicken</p>
+<body class="p-4">
+    <div class="max-w-3xl mx-auto content">
+        <div class="text-center">
+            <h1 class="text-3xl header-text">Cafe Vintage</h1>
+            <h2 class="text-4xl header-text">MENU</h2>
+            <p class="text-md mt-2">Savor the Taste of Excellence</p>
         </div>
-        <div class="menu-item">
-            <h2 class="text-2xl font-semibold">🍔 Burgers</h2>
-            <p>Classic Beef, Veggie Delight, Chicken Supreme</p>
-        </div>
-        <div class="menu-item">
-            <h2 class="text-2xl font-semibold">🍰 Desserts</h2>
-            <p>Chocolate Cake, Tiramisu, Cheesecake</p>
+
+        <div class="grid grid-cols-2 gap-4 mt-6">
+            <div>
+                <img src="/images/juice.jpg" alt="A variety of drinks" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Fresh Juices</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Watermelon Juice</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/images/breakfast.jpg" alt="Breakfast items" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Breakfast Specials</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Stewed Apple</li>
+                    <li>Muesli/Cornflakes</li>
+                    <li>Eggs to Order</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/images/fish.jpg" alt="Seafood dishes" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Seafood</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Poached Fish</li>
+                    <li>Grilled Salmon</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/images/chicken.jpg" alt="Meat dishes" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Meat Dishes</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Grilled Chicken Sausage</li>
+                    <li>Roast Turkey</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/images/bread.jpg" alt="Breads" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Breads</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Rye Bread</li>
+                    <li>Sourdough Bread</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/images/coffee.jpg" alt="Hot beverages" class="w-full rounded-lg image-fit"/>
+                <h3 class="text-xl font-bold text-center bg-red-600 text-white py-1 rounded">Hot Beverages</h3>
+                <ul class="mt-2 text-sm">
+                    <li>Tea</li>
+                    <li>Coffee</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

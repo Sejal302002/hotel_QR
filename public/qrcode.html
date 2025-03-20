@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant QR Code E-Poster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+        .poster-content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+        .qr-container {
+            background-color: #ffffff;
+            border: 3px solid #D32F2F;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div id="poster-layout" class="poster-content text-center max-w-lg">
+        <h1 class="text-5xl font-extrabold header-text">Cafe Vintage</h1>
+        <p class="text-lg mt-2 italic">"Where Taste Meets Elegance"</p>
+
+        <div class="qr-container mt-6">
+            <canvas id="qrcode" class="mx-auto"></canvas>
+        </div>
+
+        <p class="text-lg font-semibold mt-4">Scan the QR Code to View Our Menu</p>
+        <p class="text-md mt-1">Enjoy a fine dining experience like no other!</p>
+
+        <div class="mt-6 text-sm">
+            <p>📍 Camp Education Society's</p>
+            <p>Dr. Arvind B. Telang Institute</p>
+            <p>📞 Contact: +1 (234) 567-8901</p>
+            <p>🌐 Website: https://cesihm.com/</p>
+        </div>
+        
+        <button id="downloadCardBtn" class="bg-red-600 text-white px-4 py-2 mt-6 rounded-md w-full font-bold">
+            Download Poster as Image
+        </button>
+    </div>
+
+    <script>
+        const qrCodeContainer = document.getElementById('qrcode');
+        const qrCodeUrl = 'https://hotel-qr.vercel.app/menu.html';
+
+        QRCode.toCanvas(qrCodeContainer, qrCodeUrl, {
+            width: 200,
+            margin: 2,
+            color: { dark: '#000000', light: '#ffffff' }
+        }, function (error) {
+            if (error) console.error(error);
+            console.log('QR code generated successfully!');
+        });
+
+        document.getElementById('downloadCardBtn').addEventListener('click', function () {
+            const poster = document.getElementById('poster-layout');
+            html2canvas(poster).then(canvas => {
+                const posterImage = canvas.toDataURL("image/png");
+                const downloadLink = document.createElement('a');
+                downloadLink.href = posterImage;
+                downloadLink.download = 'CafeVintage_Poster.png';
+                downloadLink.click();
+            });
+        });
+    </script>
+
+</body>
+</html>
