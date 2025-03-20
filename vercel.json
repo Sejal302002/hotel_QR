@@ -1,13 +1,15 @@
 {
-    "cleanUrls": true,
-    "rewrites": [
+  "cleanUrls": true,
+  "rewrites": [
       { "source": "/menu", "destination": "/menu.html" }
-    ],
-    "headers": [
+  ],
+  "headers": [
       {
-        "source": "/(.*).(css|js|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|otf|eot|ttc|ttf|map)",
-        "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
+          "source": "/(.*).(css|js|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|otf|eot|ttc|ttf|map)",
+          "headers": [{ "key": "Cache-Control", "value": "max-age=31536000" }]
       }
-    ]
-  }
-  
+  ],
+  "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
